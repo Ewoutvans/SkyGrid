@@ -9,3 +9,7 @@ world-generation-modifiers=[
     "skygrid:skygrid"
 ]
 ```
+
+
+![skygrid](http://vr.zeroprox.cloud/SkyGrid/SkyGrid.png)
+![Chests](http://vr.zeroprox.cloud/SkyGrid/Chests.png)
