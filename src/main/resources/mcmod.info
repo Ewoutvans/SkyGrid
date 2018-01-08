@@ -1,0 +1,12 @@
+[
+  {
+    "modid": "skygrid",
+    "name": "skygrid",
+    "version": "1.0",
+    "description": "§6SkyGrid generator",
+    "authorList": [
+      "ewoutvs_",
+      "Alagild"
+    ]
+  }
+]
