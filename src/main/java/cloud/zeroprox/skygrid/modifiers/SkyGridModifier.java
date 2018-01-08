@@ -92,7 +92,7 @@ public class SkyGridModifier implements WorldGeneratorModifier {
                     .build());
         }
 
-        worldGenerator.getBiomeSettings(BiomeTypes.FLOWER_FOREST).getPopulators().add(new Populator() {
+        worldGenerator.getBiomeSettings(worldConfig.biomeType).getPopulators().add(new Populator() {
             @Override
             public PopulatorType getType() {
                 /*
@@ -159,7 +159,6 @@ public class SkyGridModifier implements WorldGeneratorModifier {
                 }
             }
         });
-
     }
 
 
