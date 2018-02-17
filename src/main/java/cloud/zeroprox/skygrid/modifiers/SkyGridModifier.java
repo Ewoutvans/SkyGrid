@@ -14,7 +14,9 @@ import org.spongepowered.api.data.key.Keys;
 import org.spongepowered.api.item.inventory.Inventory;
 import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.item.inventory.Slot;
+import org.spongepowered.api.item.inventory.property.SlotIndex;
 import org.spongepowered.api.item.inventory.property.SlotPos;
+import org.spongepowered.api.item.inventory.query.QueryOperationTypes;
 import org.spongepowered.api.text.translation.Translation;
 import org.spongepowered.api.util.weighted.VariableAmount;
 import org.spongepowered.api.world.Location;
@@ -139,11 +141,11 @@ public class SkyGridModifier implements WorldGeneratorModifier {
                             TileEntityCarrier chest = (TileEntityCarrier) chestTile;
                             Inventory inventory = chest.getInventory();
                             for (int i = (int)variableAmount.getAmount(r); i >= 0; i--) {
-                                Slot slotIndex = inventory.query(SlotPos.of(r.nextInt(9), r.nextInt(3)));
+                                Inventory slots = inventory.query(QueryOperationTypes.INVENTORY_PROPERTY.of(SlotPos.of(r.nextInt(9), r.nextInt(3))));
                                 SkyGridItemWeight item = worldConfig.items.get(r).get(0);
                                 ItemStack is =  item.itemtype.copy();
                                 is.setQuantity((item.amount.fixed ? item.amount.min : (int)VariableAmount.range(item.amount.min, item.amount.max).getAmount(r)));
-                                slotIndex.set(is);
+                                slots.set(is);
                             }
                         }
                     }
